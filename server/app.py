@@ -53,7 +53,7 @@ def vendor_sweets():
     db.session.commit()
 
     try:
-        return make_response(new_vendor_sweet.to_dict(rules=('sweet', 'vendor')), 201)
+        return make_response(new_vendor_sweet.to_dict(), 201)
     except ValueError:
         return make_response({'error': 'Validation errors'}, 400)
 
